@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "wirless-library",
-    "slug": "wirless-library",
+    "name": "BedTime-stories",
+    "slug": "BedTime-stories",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
