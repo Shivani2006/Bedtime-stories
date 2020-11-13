@@ -1,7 +1,8 @@
 import React from 'react';
-import { Text, View, TouchableOpacity,StyleSheet } from 'react-native';
+import { Text, View, TouchableOpacity,TextInput,Image,StyleSheet } from 'react-native';
 import * as Permissions from 'expo-permissions';
 import { BarCodeScanner } from 'expo-barcode-scanner';
+import { color } from 'react-native-reanimated';
 
 export default class ReadingScreen extends React.Component {
     constructor(){
@@ -62,10 +63,85 @@ export default class ReadingScreen extends React.Component {
         );
       }
 
-      
+      else if (buttonState === "normal"){
+        return(
+          <View style={styles.container}>
+            <View>
+              <Image
+                 style={{width:200, height: 200}}/>
+              <Text style={{textAlign: 'center', fontSize: 30}}>Wireles-library</Text>
+            </View>
+            <View style={styles.inputView}>
+            <TextInput 
+              style={styles.inputBox}
+              placeholder="Book Id"
+              value={this.state.scannedBookId}/>
+            <TouchableOpacity 
+              style={styles.scanButton}
+              onPress={()=>{
+                this.getCameraPermissions("BookId")
+              }}>
+              <Text style={styles.buttonText}>Scan</Text>
+            </TouchableOpacity>
+            </View>
+            <View style={styles.inputView}>
+            <TextInput 
+              style={styles.inputBox}
+              placeholder="Student Id"
+              value={this.state.scannedStudentId}/>
+            <TouchableOpacity 
+              style={styles.scanButton}
+              onPress={()=>{
+                this.getCameraPermissions("StudentId")
+              }}>
+              <Text style={styles.buttonText}>Scan</Text>
+            </TouchableOpacity>
+            </View>
+          </View>
+        );
       }
     }
-  
-
-
-
+  }
+  const styles = StyleSheet.create({
+    container: {
+      flex: 1,
+      justifyContent: 'center',
+      alignItems: 'center',
+      color: 'dark blue'
+    },
+    displayText:{
+      fontSize: 15,
+      fontFamily: 'century Gothic',
+      color: '#03befc',
+      textDecorationLine: 'underline'
+    },
+    scanButton:{
+      backgroundColor: '#2196F3',
+      padding: 10,
+      margin: 10
+    },
+    buttonText:{
+      fontSize: 15,
+      fontFamily: 'Bookman Old Style',
+      textAlign: 'center',
+      marginTop: 10
+    },
+    inputView:{
+      flexDirection: 'row',
+      margin: 20
+    },
+    inputBox:{
+      width: 200,
+      height: 40,
+      borderWidth: 1.5,
+      borderRightWidth: 0,
+      color: '#03fce3',
+      fontSize: 20
+    },
+    scanButton:{
+      backgroundColor: '#66BB6A',
+      width: 50,
+      borderWidth: 1.5,
+      borderLeftWidth: 0
+    }
+  });
