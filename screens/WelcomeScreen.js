@@ -211,12 +211,12 @@ export default class WelcomeScreen extends Component {
           style={{ flex: 0.25}}
         >
           
-        <View style={{flex:0.15}}/>
+        <View style={{flex:0.10}}/>
         <View style={styles.santaView}>
-         {/*  <Image
-          source={require('../assets/santa.png')}
+         {  <Image
+          source={require('../assets/moon.png')}
           style={styles.santaImage}
-           /> */}
+           /> }
          </View>
         </View>
         <View style={{ flex: 0.45 }}>
@@ -268,11 +268,11 @@ export default class WelcomeScreen extends Component {
         <View
           style={{ flex: 0.3}}
         >
-      {/*   <Image
-        source={require('../assets/book.png')}
+      {  <Image
+        source={require('../assets/clouds.png')}
         style={styles.bookImage}
         resizeMode={"stretch"}
-         /> */}
+         /> }
         </View>
       </View>
     );

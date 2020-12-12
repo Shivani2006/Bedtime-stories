@@ -25,13 +25,32 @@ export default class WrittingScreen extends React.Component {
         userId: firebase.auth().currentUser.email,
         name: '',
         story:'',
+        author:""
         
       }
     }
 
-    addStory=(name, story)=>{
+    componentDidMount(){
+      this.getAuthorName();
+    }
+
+    getAuthorName=()=>{
+      db.collection("users").where("email_id", "==", this.state.userId).get().then((snapshot)=>{
+        snapshot.forEach((doc)=>{
+            var author = doc.data().first_name + " " + doc.data().last_name
+            this.setState({
+              author:author
+            })
+        })
+      })
+    }
+    
+
+    addStory=(name, story)=>{     
+
       db.collection("stories").add({
         user_id: this.state.userId,
+        author: this.state.author,
         name: name,
         story: story,
         story_id: Math.random().toString(36).substring(7),

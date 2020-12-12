@@ -21,7 +21,7 @@ export default class App extends React.Component {
 
 const TabNavigator = createBottomTabNavigator({
   Reading: {screen: ReadingScreen},
-  Writting: {screen: WrittingScreen},
+  Writing: {screen: WrittingScreen},
 });
 
 const switchNavigator = createSwitchNavigator({
