@@ -1,12 +1,13 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, Image } from 'react-native';
 
 import { createAppContainer, createSwitchNavigator } from 'react-navigation';
 import { createBottomTabNavigator } from 'react-navigation-tabs';
 
-import ReadingScreen from './screens/ReadingScreen';
-import WrittingScreen from './screens/WrittingScreen';
+
 import WelcomeScreen from './screens/WelcomeScreen';
+import {TabNavigator} from "./components/AppTabNavigator"
+import {AppDrawerNavigator} from './components/AppDrawerNavigator';
 
 
 export default class App extends React.Component {
@@ -19,14 +20,12 @@ export default class App extends React.Component {
   }
 }
 
-const TabNavigator = createBottomTabNavigator({
-  Reading: {screen: ReadingScreen},
-  Writing: {screen: WrittingScreen},
-});
+
 
 const switchNavigator = createSwitchNavigator({
   Welcome: {screen: WelcomeScreen},
-  TabNavigator: {screen: TabNavigator},
+  Drawer: {screen : AppDrawerNavigator},
+  BottomTab: {screen: TabNavigator},
 })
 
 const AppContainer =  createAppContainer(switchNavigator);

@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
-import { View, StyleSheet, Text, FlatList,TouchableOpacity } from 'react-native';
+import { View, StyleSheet, Text, FlatList,TouchableOpacity,Icon } from 'react-native';
 import { ListItem } from 'react-native-elements'
 import firebase from 'firebase';
 import db from '../config'
 import MyHeader from '../components/MyHeader';
 import { RFValue } from "react-native-responsive-fontsize";
 
-export default class BookDonateScreen extends Component{
+export default class ReadingScreen extends Component{
   constructor(){
     super()
     this.state = {
@@ -40,7 +40,7 @@ export default class BookDonateScreen extends Component{
         key={i}
         title={item.name}
         subtitle={item.author}
-        titleStyle={{ color: '#32867d', fontWeight: 'bold' }}
+        titleStyle={{ color: '#32867d', fontWeight: 'bold',fontFamily:'Bodoni MT Black' }}
         rightElement={
             <TouchableOpacity style={styles.button}
               onPress ={()=>{
@@ -59,7 +59,7 @@ export default class BookDonateScreen extends Component{
     return(
       <View style={{flex:1}}>
         <MyHeader title="Read story" navigation ={this.props.navigation}/>
-        <View style={{flex:1}}>
+        <View style={{flex:1, }}>
           {
             this.state.storyList.length === 0
             ?(

@@ -214,7 +214,7 @@ export default class WelcomeScreen extends Component {
         <View style={{flex:0.10}}/>
         <View style={styles.santaView}>
          {  <Image
-          source={require('../assets/moon.png')}
+          source={require('../assets/story.png')}
           style={styles.santaImage}
            /> }
          </View>
@@ -383,7 +383,7 @@ santaView:{
 },
 santaImage:{
   width:"70%",
-  height:"100%",
+  height:"80%",
   resizeMode:"stretch"
 },
 TextInput:{
