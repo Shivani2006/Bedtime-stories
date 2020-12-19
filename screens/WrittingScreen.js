@@ -62,7 +62,7 @@ export default class WrittingScreen extends React.Component {
       render() {    
      
         return(
-          <View style={{ flex: 1 }}>
+          <View style={{ flex: 1, backgroundColor:"lightblue" }}>
             <View style={{ flex: 0.1 }}>
               <MyHeader title= "Writer's idea" navigation={this.props.navigation} /> 
             </View>
@@ -76,7 +76,7 @@ export default class WrittingScreen extends React.Component {
                 value={this.state.name}
               />
                <TextInput
-                style={styles.formTextInput}                
+                style={[styles.formTextInput, {height : RFValue(100)}]}                
                 multiline   
                 placeholder={"Tell something more about this Idea"}
                 onChangeText={(text) => {

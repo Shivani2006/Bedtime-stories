@@ -213,10 +213,11 @@ export default class WelcomeScreen extends Component {
           
         <View style={{flex:0.10}}/>
         <View style={styles.santaView}>
-         {  <Image
-          source={require('../assets/story.png')}
+          <Image
+          source={require('../assets/front.png')}
           style={styles.santaImage}
-           /> }
+           /> 
+             <Text style={ {fontSize:65,fontWeight:'300', paddingBottom:30,color : "#32867d"}}>Dreamatory</Text>
          </View>
         </View>
         <View style={{ flex: 0.45 }}>
@@ -269,7 +270,7 @@ export default class WelcomeScreen extends Component {
           style={{ flex: 0.3}}
         >
       {  <Image
-        source={require('../assets/clouds.png')}
+        source={require('../assets/rainbow.png')}
         style={styles.bookImage}
         resizeMode={"stretch"}
          /> }
@@ -382,7 +383,7 @@ santaView:{
   padding:RFValue(10)
 },
 santaImage:{
-  width:"70%",
+  width:"80%",
   height:"80%",
   resizeMode:"stretch"
 },
@@ -393,6 +394,6 @@ TextInput:{
 },
 bookImage:{
   width:"100%",
-  height:RFValue(220)
+  height:RFValue(250)
 }
 });
